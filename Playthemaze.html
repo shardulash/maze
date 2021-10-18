@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<body>
+<html>
+
+
+            
+
+
+
+
+
+
+
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/w3css/3/w3.css">
+<body>
+
+<!-- Navigation -->
+<nav class="w3-bar w3-black">
+ <a href="mazeinformation.html" class="w3-button w3-bar-item">game information</a>
+  
+  </nav>
+
+
+<html>
+<head>
+<style>
+body {
+  background-color:green;
+}
+</style>
+</head>
+<body>
+</body>
+</html>
+
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=6.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var myGamePiece;
+
+function startGame() {
+    myGamePiece = new component(20, 20, "black",20, 240);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }    
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+    myGamePiece.newPos();    
+    myGamePiece.update();
+}
+
+function moveup() {
+    myGamePiece.speedY -= 1; 
+}
+
+function movedown() {
+    myGamePiece.speedY += 1; 
+}
+
+function moveleft() {
+    myGamePiece.speedX -= 1; 
+}
+
+function moveright() {
+    myGamePiece.speedX += 1; 
+}
+</script>
+<div style="text-align:center;width:480px;">
+  <button onclick="moveup()">UP</button><br><br>
+  <button onclick="moveleft()">LEFT</button>
+  <button onclick="moveright()">RIGHT</button><br><br>
+  <button onclick="movedown()">DOWN</button>
+</div>
+
+<p>.</p>
+
+
+
+<html>
+<head>
+  <style>
+    
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    .fish
+    {
+      position: absolute;
+      top: 60px;
+      left: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: relative; left: 0; top: 0;">
+    <img src="img/" class="maze"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Maze_simple.svg/1200px-Maze_simple.svg.png" class="maze"/>
+  </div>
+
+
+
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background-color:black;
+  animation-name: example;
+  animation-duration:4s;
+}
+
+@keyframes example {
+  from {background-color:gray;}
+  to {background-color: white;}
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<div></div>
+
+
+
+</body>
+</html>
+
